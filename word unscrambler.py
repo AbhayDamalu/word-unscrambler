@@ -18,6 +18,7 @@ def permutations(raw_str):
     return word_list
 
 while True:
+    count=0
     inp=input("Enter word to unscramble:")
     while inp.isalpha()==False:
         print("Invalid Input...")
@@ -27,9 +28,10 @@ while True:
     print()
     print("Words Generated--")
     print("---------------")
-    for word in possible_words_list:
-        if word+"\n" in words_list:
-            print(word)
-        else:
-            pass
+    for word in words_list:
+        if word[:-1] in possible_words_list:
+            count+=1
+            print(word[:-1])
+    if count==0:
+        print("No word possible...")
     print()
