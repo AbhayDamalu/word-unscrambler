@@ -7,7 +7,7 @@ words_list=file.readlines()
 def permutations(raw_str):
     from itertools import permutations
     word_list=[]
-    ch_s=list(inp)
+    ch_s=list(raw_str)
     perm=permutations(ch_s)
     for i in list(perm):
         word=""
@@ -24,7 +24,7 @@ while True:
         print("Invalid Input...")
         inp=input("Enter word to unscramble:")
 
-    possible_words_list=permutations(inp)
+    possible_words_list=permutations(inp.lower())
     print()
     print("Words Generated--")
     print("---------------")
